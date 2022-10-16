@@ -1,0 +1,185 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Module14
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("STUDENT");
+            Student s = new Student("Mark", "Nueva Ecija", "Male", 0996755234, "Mark2@gmail.com", "May 8, 2005", "General De Jesus College", "HUMSS");
+            s.introduceSelf();
+
+            Console.WriteLine("EMPLOYEE");
+            Console.WriteLine("FACULTY");
+            Faculty f = new Faculty("Gerald", "Nueva Ecija", "Male", 0936105336 , "Gerald23@gmai.com", "March 5, 1974", "General De Jesus College", 3000, "IT Deparment", 20 );
+            f.introduceSelf();
+
+            Console.WriteLine("STAFF");
+            Staff st = new Staff("Romeo", "Nueva Ecija", "Male", 0985761697, "Romeo27@gmail.com", "May 23, 1978", "General De Jesus College", 1580, "Electric Maintenance");
+            st.introduceSelf();
+
+            Console.ReadLine();
+        }
+    }
+}
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Module14
+{
+    internal class Staff: Person
+    {
+        public string designation { get; set; }
+        public int salary { get; set; }
+        public string serviceDepartment { get; set; }
+
+        public Staff(string Name, string Address, string Gender, int Phone, string Email, string BirthDate, string Designation, int Salary, string ServiceDepartment) : base(Name, Address, Gender, Phone,Email, BirthDate)
+        {
+            this.designation = Designation;
+            this.salary = Salary;
+            this.serviceDepartment = ServiceDepartment;
+        }
+
+        public void introduceSelf()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Gender: " + gender);
+            Console.WriteLine("Phone: " + phone);
+            Console.WriteLine("Email: " + email);
+            Console.WriteLine("BirthDate: " + birthDate);
+            Console.WriteLine("Designation: " + designation);
+            Console.WriteLine("Salary: " + salary);
+            Console.WriteLine("ServiceDepartment: " +  serviceDepartment);
+        }
+    }
+}
+
+
+using System;
+using System.Net;
+using System.Security.Policy;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace Module14
+{
+    internal class Faculty: Person
+    {
+        
+        public string designation { get; set; } 
+        public int salary { get; set; } 
+        public string collegeDepartment { get; set; }   
+        public int subjectLoad { get; set; }
+
+
+        public Faculty(string Name, string Address, string Gender, int Phone, string Email, string BirthDate, string Designation, int Salary, string CollegeDepartment, int SubjectLoad) : base(Name, Address, Gender, Phone, Email, BirthDate)
+        {
+            this.designation = Designation;
+            this.salary = Salary;
+            this.collegeDepartment = CollegeDepartment;
+            this.subjectLoad = SubjectLoad;
+        }
+
+
+        public void introduceSelf() 
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Gender: " + gender);
+            Console.WriteLine("Phone: " + phone);
+            Console.WriteLine("Email: " + email);
+            Console.WriteLine("BirthDate: " + birthDate);
+            Console.WriteLine("Designation: " + designation);
+            Console.WriteLine("Salary: " + salary);
+            Console.WriteLine("CollegeDepartment: " + collegeDepartment);
+            Console.WriteLine("SUbjectLoad: " + subjectLoad);
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Module14
+{
+    internal class Student: Person
+    {
+        public string SchoolLastGraduated { get; set; }
+        public string course { get; set; }
+
+
+        public Student(string Name, string Address, string Gender, int Phone, string Email, string BirthDate, string SchoolLastGraduated, string Course) : base (Name, Address, Gender, Phone, Email, BirthDate)
+        {
+            this.SchoolLastGraduated = SchoolLastGraduated;
+            this.course = course;
+        }
+
+        public void introduceSelf()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Gender: " + gender);
+            Console.WriteLine("Phone: " + phone);
+            Console.WriteLine("Email: " + email);
+            Console.WriteLine("BirthDate: " + birthDate);
+            Console.WriteLine("SchoolLastGraduated: " + SchoolLastGraduated);
+            Console.WriteLine("Course: " + course);
+        }
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Module14
+{
+    internal class Person
+    {
+        public string name { get; set; }
+        public string address { get; set; }
+        public string gender { get; set; }
+        public int phone { get; set; }
+        public string email { get; set; }
+        public string birthDate { get; set; }
+
+        public Person(string name, string address, string gender, int phone, string email, string birthDate)
+        {
+            this.name = name;
+            this.address = address;
+            this.gender = gender;
+            this.phone = phone;
+            this.email = email;
+            this.birthDate = birthDate;
+        }
+
+        public void introduceSelf()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Address: " + address);
+            Console.WriteLine("Gender: " + gender);
+            Console.WriteLine("Phone: " + phone);
+            Console.WriteLine("Email: " + email);
+            Console.WriteLine("BirthDate: " + birthDate);
+        }
+
+    }
+}
